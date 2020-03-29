@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Banco/Banco.iml" filepath="$PROJECT_DIR$/Banco/Banco.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DevDojo/DevDojo.iml" filepath="$PROJECT_DIR$/DevDojo/DevDojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercicio_02092019/Exercicio_02092019.iml" filepath="$PROJECT_DIR$/Exercicio_02092019/Exercicio_02092019.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercicio_1208/Exercicio_1208.iml" filepath="$PROJECT_DIR$/Exercicio_1208/Exercicio_1208.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercicio_1908/Exercicio_1908.iml" filepath="$PROJECT_DIR$/Exercicio_1908/Exercicio_1908.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IMC/IMC.iml" filepath="$PROJECT_DIR$/IMC/IMC.iml" />
+    </modules>
+  </component>
+</project>

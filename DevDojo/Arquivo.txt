@@ -1,0 +1,2 @@
+Escrevendo uma mensagem no arquivo
+ e Pulando uma linha

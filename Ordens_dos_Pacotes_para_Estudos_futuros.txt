@@ -1,0 +1,20 @@
+1 - Introdução Classes
+2 - Introdução Metodos
+3 - Sobrecargas de Métodos
+4 - Sobrecargas de Construtores
+5 - Bloco de Inicialização
+    
+
+
+=====================================================
+
+
+1 - Espaço em memória é alocado para o objeto constrído;
+2 - Cada um dos atributos do objeto é criado e inicializado com os valores default;
+3 - O construtor da superclasse é chamado;
+4 - A Inicialização dos atributos via declaração e o código do bloco de Inicialização da superclasse são executados na ordem em que aparece;
+5 - O código do construtor da superclasse é chamado;
+6 - Passo 4 para a subclasse é executado;
+7 - O código do construtor da classe é executado
+
+
