@@ -9,7 +9,7 @@ public class BarChart {
 		
 		// para cada elemento do array, gera uma saída do gráfico de barras
 		for (int counter = 0; counter < array.length ; counter++) {
-			//gera a saída do rótulo de barra ("00-99:...,90-99,100")
+			//gera a sa�da do r�tulo de barra ("00-99:...,90-99,100")
 			if (counter == 10) {
 				System.out.printf("%5d: ",100);
 			} else {
