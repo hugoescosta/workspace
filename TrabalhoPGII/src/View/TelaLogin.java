@@ -14,6 +14,8 @@ import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class TelaLogin {
 
@@ -95,6 +97,14 @@ public class TelaLogin {
 		panel.add(lblSenha);
 		
 		pF = new JPasswordField();
+		pF.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent arg0) {
+				if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
+					checarLoginSenha();
+				}
+			}
+		});
 		pF.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pF.setBounds(115, 256, 357, 29);
 		panel.add(pF);
@@ -102,13 +112,7 @@ public class TelaLogin {
 		JButton btnEntrar = new JButton("Entrar");
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-				if (checkLogin(txtLogin.getText(),new String (pF.getPassword()))) {
-					JOptionPane.showMessageDialog(null, "Seja Bem Vindo ao Sistema","Login",JOptionPane.INFORMATION_MESSAGE);
-				} else {
-					JOptionPane.showMessageDialog(null, "Acesso NEGADO!!!","Login",JOptionPane.ERROR_MESSAGE);
-				}
-				
+				checarLoginSenha();
 			}
 		});
 		btnEntrar.setBounds(375, 298, 97, 25);
@@ -123,4 +127,16 @@ public class TelaLogin {
 	public boolean checkLogin(String login, String senha) {
 		return login.equals("usuario") && senha.equals("senha");
 	}
+	
+	public boolean checarLoginSenha() {
+		if (checkLogin(txtLogin.getText(),new String (pF.getPassword()))) {
+			JOptionPane.showMessageDialog(null, "Seja Bem Vindo ao Sistema","Login",JOptionPane.INFORMATION_MESSAGE);
+			return true;
+		} else {
+			JOptionPane.showMessageDialog(null, "Acesso NEGADO!!!","Login",JOptionPane.ERROR_MESSAGE);
+			return false;
+		}
+	}
+	
+	
 }

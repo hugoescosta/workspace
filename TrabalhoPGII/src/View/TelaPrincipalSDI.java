@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.BorderLayout;
 
-public class TelaPrincipalMDI {
+public class TelaPrincipalSDI {
 
 	private JFrame frmUsememoda;
 	private JMenu mnSobre;
@@ -39,7 +39,7 @@ public class TelaPrincipalMDI {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TelaPrincipalMDI window = new TelaPrincipalMDI();
+					TelaPrincipalSDI window = new TelaPrincipalSDI();
 					window.frmUsememoda.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -51,7 +51,7 @@ public class TelaPrincipalMDI {
 	/**
 	 * Create the application.
 	 */
-	public TelaPrincipalMDI() {
+	public TelaPrincipalSDI() {
 		initialize();
 	}
 
@@ -61,7 +61,7 @@ public class TelaPrincipalMDI {
 	private void initialize() {
 		frmUsememoda = new JFrame();
 		frmUsememoda.setTitle("UsemeModa");
-		frmUsememoda.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaPrincipalMDI.class.getResource("/Images/logo_useme_02.png")));
+		frmUsememoda.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaPrincipalSDI.class.getResource("/Images/logo_useme_02.png")));
 		frmUsememoda.setBounds(100, 100, 1017, 766);
 		frmUsememoda.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmUsememoda.setLocationRelativeTo(null);
@@ -70,19 +70,16 @@ public class TelaPrincipalMDI {
 		frmUsememoda.setJMenuBar(menuBar);
 		
 		JMenu mnArquivo = new JMenu("Arquivo");
-		mnArquivo.setIcon(new ImageIcon(TelaPrincipalMDI.class.getResource("/Images/page.png")));
+		mnArquivo.setIcon(new ImageIcon(TelaPrincipalSDI.class.getResource("/Images/page.png")));
 		menuBar.add(mnArquivo);
 		
 		JMenuItem mntmSair = new JMenuItem("Sair");
-		mntmSair.setIcon(new ImageIcon(TelaPrincipalMDI.class.getResource("/Images/door_in.png")));
+		mntmSair.setIcon(new ImageIcon(TelaPrincipalSDI.class.getResource("/Images/door_in.png")));
 		mnArquivo.add(mntmSair);
 		
 		JMenu mnUsuarios = new JMenu("Usu\u00E1rios");
-		mnUsuarios.setIcon(new ImageIcon(TelaPrincipalMDI.class.getResource("/Images/user.png")));
+		mnUsuarios.setIcon(new ImageIcon(TelaPrincipalSDI.class.getResource("/Images/user.png")));
 		menuBar.add(mnUsuarios);
-		
-		JDesktopPane desktopPane = new JDesktopPane();
-		frmUsememoda.getContentPane().add(desktopPane, BorderLayout.CENTER);
 		
 		JMenuItem mntmUsuCadastrar = new JMenuItem("Cadastrar");
 		mntmUsuCadastrar.addActionListener(new ActionListener() {
@@ -91,59 +88,52 @@ public class TelaPrincipalMDI {
 				
 
 				
-				TelaCadastroUsuario telaCadUser = new TelaCadastroUsuario();
-				desktopPane.add(telaCadUser);
-				telaCadUser.setVisible(true);
+				new TelaCadastroUsuarioSDI().setVisible(true);
 				
 				
 				
 			}
 		});
-		mntmUsuCadastrar.setIcon(new ImageIcon(TelaPrincipalMDI.class.getResource("/Images/user_add.png")));
+		mntmUsuCadastrar.setIcon(new ImageIcon(TelaPrincipalSDI.class.getResource("/Images/user_add.png")));
 		mnUsuarios.add(mntmUsuCadastrar);
 		
 		JMenuItem mntmUsuAlterar = new JMenuItem("Alterar");
-		mntmUsuAlterar.setIcon(new ImageIcon(TelaPrincipalMDI.class.getResource("/Images/user_edit.png")));
+		mntmUsuAlterar.setIcon(new ImageIcon(TelaPrincipalSDI.class.getResource("/Images/user_edit.png")));
 		mnUsuarios.add(mntmUsuAlterar);
 		
 		JMenuItem mntmUsuExcluir = new JMenuItem("Excluir");
-		mntmUsuExcluir.setIcon(new ImageIcon(TelaPrincipalMDI.class.getResource("/Images/user_delete.png")));
+		mntmUsuExcluir.setIcon(new ImageIcon(TelaPrincipalSDI.class.getResource("/Images/user_delete.png")));
 		mnUsuarios.add(mntmUsuExcluir);
 		
 		JMenuItem mntmUsuPesquisar = new JMenuItem("Pesquisar");
-		mntmUsuPesquisar.setIcon(new ImageIcon(TelaPrincipalMDI.class.getResource("/Images/zoom.png")));
+		mntmUsuPesquisar.setIcon(new ImageIcon(TelaPrincipalSDI.class.getResource("/Images/zoom.png")));
 		mnUsuarios.add(mntmUsuPesquisar);
 		
 		JMenu mnAlterar = new JMenu("Clientes");
-		mnAlterar.setIcon(new ImageIcon(TelaPrincipalMDI.class.getResource("/Images/group.png")));
+		mnAlterar.setIcon(new ImageIcon(TelaPrincipalSDI.class.getResource("/Images/group.png")));
 		menuBar.add(mnAlterar);
 		
 		JMenuItem mntmCliCadastrar = new JMenuItem("Cadastrar");
-		mntmCliCadastrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		mntmCliCadastrar.setIcon(new ImageIcon(TelaPrincipalMDI.class.getResource("/Images/group_add.png")));
+		mntmCliCadastrar.setIcon(new ImageIcon(TelaPrincipalSDI.class.getResource("/Images/group_add.png")));
 		mnAlterar.add(mntmCliCadastrar);
 		
 		JMenuItem mntmCliAlterar = new JMenuItem("Alterar");
-		mntmCliAlterar.setIcon(new ImageIcon(TelaPrincipalMDI.class.getResource("/Images/group_edit.png")));
+		mntmCliAlterar.setIcon(new ImageIcon(TelaPrincipalSDI.class.getResource("/Images/group_edit.png")));
 		mnAlterar.add(mntmCliAlterar);
 		
 		JMenuItem mntmCliExcluir = new JMenuItem("Excluir");
-		mntmCliExcluir.setIcon(new ImageIcon(TelaPrincipalMDI.class.getResource("/Images/group_delete.png")));
+		mntmCliExcluir.setIcon(new ImageIcon(TelaPrincipalSDI.class.getResource("/Images/group_delete.png")));
 		mnAlterar.add(mntmCliExcluir);
 		
 		JMenuItem mntmCliPesquisar = new JMenuItem("Pesquisar");
-		mntmCliPesquisar.setIcon(new ImageIcon(TelaPrincipalMDI.class.getResource("/Images/zoom.png")));
+		mntmCliPesquisar.setIcon(new ImageIcon(TelaPrincipalSDI.class.getResource("/Images/zoom.png")));
 		mnAlterar.add(mntmCliPesquisar);
 		
 		mnSobre = new JMenu("Sobre");
-		mnSobre.setIcon(new ImageIcon(TelaPrincipalMDI.class.getResource("/Images/information.png")));
+		mnSobre.setIcon(new ImageIcon(TelaPrincipalSDI.class.getResource("/Images/information.png")));
 		menuBar.add(mnSobre);
 		
 
 	}
-	
 
 }

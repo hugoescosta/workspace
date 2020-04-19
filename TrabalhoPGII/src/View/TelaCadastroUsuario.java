@@ -9,11 +9,12 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
+import javax.swing.ImageIcon;
 
 public class TelaCadastroUsuario extends JInternalFrame {
-	private JTextField textField;
-	private JPasswordField passwordField;
-	private JPasswordField passwordField_1;
+	private JTextField txtUsuario;
+	private JPasswordField passFieldSenha;
+	private JPasswordField passFieldConfirmaSenha;
 
 	/**
 	 * Launch the application.
@@ -35,6 +36,8 @@ public class TelaCadastroUsuario extends JInternalFrame {
 	 * Create the frame.
 	 */
 	public TelaCadastroUsuario() {
+		setTitle("Cadastro de Usu\u00E1rio");
+		setFrameIcon(new ImageIcon(TelaCadastroUsuario.class.getResource("/Images/logo_useme_02.png")));
 		setClosable(true);
 		setBounds(100, 100, 626, 470);
 		getContentPane().setLayout(null);
@@ -54,23 +57,23 @@ public class TelaCadastroUsuario extends JInternalFrame {
 		lblConfirmarSenha.setBounds(92, 265, 128, 16);
 		getContentPane().add(lblConfirmarSenha);
 		
-		textField = new JTextField();
-		textField.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		textField.setBounds(92, 150, 415, 31);
-		getContentPane().add(textField);
-		textField.setColumns(10);
+		txtUsuario = new JTextField();
+		txtUsuario.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		txtUsuario.setBounds(92, 150, 415, 31);
+		getContentPane().add(txtUsuario);
+		txtUsuario.setColumns(10);
 		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(92, 212, 415, 29);
-		getContentPane().add(passwordField);
+		passFieldSenha = new JPasswordField();
+		passFieldSenha.setBounds(92, 212, 415, 29);
+		getContentPane().add(passFieldSenha);
 		
-		passwordField_1 = new JPasswordField();
-		passwordField_1.setBounds(92, 285, 415, 29);
-		getContentPane().add(passwordField_1);
+		passFieldConfirmaSenha = new JPasswordField();
+		passFieldConfirmaSenha.setBounds(92, 285, 415, 29);
+		getContentPane().add(passFieldConfirmaSenha);
 		
-		JButton btnSalvar = new JButton("Salvar");
-		btnSalvar.setBounds(410, 353, 97, 25);
-		getContentPane().add(btnSalvar);
+		JButton btnSalvarUsuario = new JButton("Salvar");
+		btnSalvarUsuario.setBounds(410, 353, 97, 25);
+		getContentPane().add(btnSalvarUsuario);
 
 	}
 
