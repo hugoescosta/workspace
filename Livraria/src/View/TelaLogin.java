@@ -1,20 +1,15 @@
 package View;
-import Classes.ConectaBanco;
-import Classes.ConnectDAO;
-import Classes.Usuario;
-
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 
 import java.awt.EventQueue;
-
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+
+import Classes.Usuario;
+
 import java.awt.Font;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
@@ -31,9 +26,6 @@ public class TelaLogin {
 	private JFrame frmLogin;
 	private JTextField txtLogin;
 	private JPasswordField pF;
-	private String login;
-	private String senha;
-	//private TelaPrincipalMDI telaPrincipalMDI;
 
 	/**
 	 * Launch the application.
@@ -88,6 +80,8 @@ public class TelaLogin {
 		//Centraliza o JFrame no centro da tela
 		frmLogin.setLocationRelativeTo(null);
 		
+		Usuario usuario = new Usuario();
+		
 		JPanel panel = new JPanel();
 		panel.setBounds(0, 0, 609, 379);
 		frmLogin.getContentPane().add(panel);
@@ -114,7 +108,10 @@ public class TelaLogin {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
 				if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-					//checarLoginSenha();
+					if(usuario.checaSenhaUsuario(txtLogin.getText(), new String (pF.getPassword()))) {
+						//TelaPrincipalMDI telaprincipal = new TelaPrincipalMDI();
+						TelaPrincipalMDI.main(usuario);
+					}
 				}
 			}
 		});
@@ -125,18 +122,10 @@ public class TelaLogin {
 		JButton btnEntrar = new JButton("Entrar");
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if (checarLoginSenha()) {
-					//JOptionPane.showMessageDialog(null, "Seja Bem Vindo ao Sistema","Login",JOptionPane.INFORMATION_MESSAGE);
-					TelaPrincipalMDI windowPrincipal = new TelaPrincipalMDI();
-					frmLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// tem que fechar a tela
-					windowPrincipal.main(null);
-					
-					
-					//desktopPane.add(telaCadUser);
-
-				} else {
-					JOptionPane.showMessageDialog(null, "Acesso NEGADO!!!","Login",JOptionPane.ERROR_MESSAGE);
-				}			
+				if(usuario.checaSenhaUsuario(txtLogin.getText(), new String (pF.getPassword()))) {
+					//TelaPrincipalMDI telaprincipal = new TelaPrincipalMDI();
+					TelaPrincipalMDI.main(usuario);
+				}
 			}
 		});
 		btnEntrar.setBounds(375, 298, 97, 25);
@@ -145,23 +134,6 @@ public class TelaLogin {
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(TelaLogin.class.getResource("/Images/fortaleza.png")));
 		lblNewLabel.setBounds(248, 23, 86, 114);
-		panel.add(lblNewLabel);
+		panel.add(lblNewLabel);	
 	}
-	
-	
-	public boolean checarLoginSenha() {
-		ConnectDAO dao = new ConnectDAO();
-		String password = new String (pF.getPassword());
-		
-		Usuario usuario = dao.buscaUsuario(txtLogin.getText(),password);
-		
-		System.out.println(password + usuario.getSenha());
-	   if (txtLogin.getText().equals(usuario.getLogin()) && password.equals(usuario.getSenha())) {
-			return true;
-		} else {
-			
-			return false;
-		}
-	}
-	
 }

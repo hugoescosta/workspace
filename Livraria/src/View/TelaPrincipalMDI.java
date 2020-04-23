@@ -7,6 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+
+import Classes.Usuario;
+
 import javax.swing.ImageIcon;
 import java.awt.Toolkit;
 import javax.swing.JDesktopPane;
@@ -22,7 +25,8 @@ public class TelaPrincipalMDI {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	//public static void main(String[] args) {
+	public static void main(Usuario usuario) {
 		// Cores do NETBEANS
 		try {
 			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -41,6 +45,7 @@ public class TelaPrincipalMDI {
 				try {
 					TelaPrincipalMDI window = new TelaPrincipalMDI();
 					window.frmUsememoda.setVisible(true);
+					window.frmUsememoda.setTitle("Livraria Fortaleza - Usuario: "+ usuario.getNome());
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -60,8 +65,8 @@ public class TelaPrincipalMDI {
 	 */
 	private void initialize() {
 		frmUsememoda = new JFrame();
-		frmUsememoda.setTitle("UsemeModa");
-		frmUsememoda.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaPrincipalMDI.class.getResource("/Images/fortaleza.png")));
+		//frmUsememoda.setTitle("Livraria Fortaleza - Usuario:"+ usuario.getName());
+		frmUsememoda.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaPrincipalMDI.class.getResource("/Images/logo_useme_02.png")));
 		frmUsememoda.setBounds(100, 100, 1017, 766);
 		frmUsememoda.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmUsememoda.setLocationRelativeTo(null);
@@ -91,9 +96,9 @@ public class TelaPrincipalMDI {
 				
 
 				
-				TelaCadastroUsuario telaCadUser = new TelaCadastroUsuario();
-				desktopPane.add(telaCadUser);
-				telaCadUser.setVisible(true);
+				//TelaCadastroUsuario telaCadUser = new TelaCadastroUsuario();
+				//desktopPane.add(telaCadUser);
+				//telaCadUser.setVisible(true);
 				
 				
 				
