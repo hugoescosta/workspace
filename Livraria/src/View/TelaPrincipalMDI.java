@@ -27,6 +27,7 @@ public class TelaPrincipalMDI {
 	 */
 	//public static void main(String[] args) {
 	public static void main(Usuario usuario) {
+		
 		// Cores do NETBEANS
 		try {
 			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -56,23 +57,23 @@ public class TelaPrincipalMDI {
 	/**
 	 * Create the application.
 	 */
-	public TelaPrincipalMDI() {
+	public TelaPrincipalMDI()  {
 		initialize();
 	}
 
 	/**
 	 * Initialize the contents of the frame.
+	 * @return 
 	 */
 	private void initialize() {
 		frmUsememoda = new JFrame();
-		//frmUsememoda.setTitle("Livraria Fortaleza - Usuario:"+ usuario.getName());
 		frmUsememoda.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaPrincipalMDI.class.getResource("/Images/logo_useme_02.png")));
 		frmUsememoda.setBounds(100, 100, 1017, 766);
 		frmUsememoda.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmUsememoda.setLocationRelativeTo(null);
-		
 		JMenuBar menuBar = new JMenuBar();
 		frmUsememoda.setJMenuBar(menuBar);
+	
 		
 		JMenu mnArquivo = new JMenu("Arquivo");
 		mnArquivo.setIcon(new ImageIcon(TelaPrincipalMDI.class.getResource("/Images/page.png")));
@@ -85,6 +86,7 @@ public class TelaPrincipalMDI {
 		JMenu mnUsuarios = new JMenu("Usu\u00E1rios");
 		mnUsuarios.setIcon(new ImageIcon(TelaPrincipalMDI.class.getResource("/Images/user.png")));
 		menuBar.add(mnUsuarios);
+		
 		
 		JDesktopPane desktopPane = new JDesktopPane();
 		frmUsememoda.getContentPane().add(desktopPane, BorderLayout.CENTER);
@@ -111,9 +113,12 @@ public class TelaPrincipalMDI {
 		mntmUsuAlterar.setIcon(new ImageIcon(TelaPrincipalMDI.class.getResource("/Images/user_edit.png")));
 		mnUsuarios.add(mntmUsuAlterar);
 		
+		
 		JMenuItem mntmUsuExcluir = new JMenuItem("Excluir");
 		mntmUsuExcluir.setIcon(new ImageIcon(TelaPrincipalMDI.class.getResource("/Images/user_delete.png")));
 		mnUsuarios.add(mntmUsuExcluir);
+		
+		
 		
 		JMenuItem mntmUsuPesquisar = new JMenuItem("Pesquisar");
 		mntmUsuPesquisar.setIcon(new ImageIcon(TelaPrincipalMDI.class.getResource("/Images/zoom.png")));
@@ -146,7 +151,6 @@ public class TelaPrincipalMDI {
 		mnSobre = new JMenu("Sobre");
 		mnSobre.setIcon(new ImageIcon(TelaPrincipalMDI.class.getResource("/Images/information.png")));
 		menuBar.add(mnSobre);
-		
 
 	}
 	
